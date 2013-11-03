@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+# Synchronize any git projects in the current directory 
+# by running a git fetch if a .git directory exists in the 
+# 1st level subdirectory.
+use Cwd;
+
+my $basedir = getcwd;
+opendir(DIR, $basedir) or die;
+my @dirs = readdir(DIR);
+closedir(DIR);
+foreach $d (@dirs) {
+    next if ($d eq "." or $d eq ".." or !-d "$basedir/$d");
+    sync($d);
+}
+
+
+exit(0);
+
+sub sync {
+	my ($d) = @_;
+	return if (!-r "$basedir/$d/.git");
+	print "Syncing ", $d, "\n";
+	chdir("$basedir/$d");
+	system("git fetch");
+	return;
+}
