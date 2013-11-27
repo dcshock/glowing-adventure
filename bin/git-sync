@@ -4,7 +4,14 @@
 # 1st level subdirectory.
 use Cwd;
 
-my $basedir = getcwd;
+my $basedir;
+if (scalar(@ARGV) > 0) {
+    $basedir = join('', @ARGV);
+} else {
+    $basedir = getcwd;
+}
+
+print "Syncing $basedir\n";
 opendir(DIR, $basedir) or die;
 my @dirs = readdir(DIR);
 closedir(DIR);
