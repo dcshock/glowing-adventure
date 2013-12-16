@@ -1,6 +1,12 @@
 #!/bin/bash
 CURR_BRANCH=`git rev-parse --abbrev-ref HEAD`
 git checkout $1
+if [ "$?" != '0' ];
+  then
+    echo Unable to checkout branch
+    exit $?   
+fi
+
 git pull
 git checkout $CURR_BRANCH 
 git merge $1
