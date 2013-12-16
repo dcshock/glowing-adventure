@@ -1,0 +1,6 @@
+#!/bin/bash
+CURR_BRANCH=`git rev-parse --abbrev-ref HEAD`
+git checkout $1
+git pull
+git checkout $CURR_BRANCH 
+git merge $1
