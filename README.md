@@ -1,6 +1,13 @@
 # glowing-adventure
 A set of utilities for Ubuntu that perform various tasks that should already be a command.
 
+## install
+To install glowing-adventure you just need to run the install.sh bash script at the root level of the checked out project directory. This script is fairly non-invasive, and only adds an export PATH line to your ~/.bashrc file. This can be easily removed at a later time. This installer is not meant to be executed multiple times. 
+
+```
+./install.sh
+```
+
 ## utilities
 ```
 (bash) git-push (push the current branch to origin)
