@@ -15,6 +15,7 @@ To install glowing-adventure you just need to run the install.sh bash script at 
 (bash)(needs validation) git-merge branch_name (merge the current branch into the current branch)
 (bash) git-rm-merged-branches (Remove old branches that have been merged)
 (bash) git-whatchanged origin_branch_name (Shows the commits that have been created on this branch based on the origin)
+(bash) javas part_of_filename (Searches for *.java files that contain the string given.)
 ```
 
 
