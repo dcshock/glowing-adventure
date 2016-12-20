@@ -28,6 +28,6 @@ sub sync {
 	return if (!-r "$basedir/$d/.git");
 	print "Syncing ", $d, "\n";
 	chdir("$basedir/$d");
-	system("git fetch");
+	system("git fetch --all");
 	return;
 }
